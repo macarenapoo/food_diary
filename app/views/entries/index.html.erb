@@ -11,7 +11,9 @@
       </div>
      
       <div class="time"><%= entry.time.strftime("%l:%M %p") %></div>
-      <div class="food"><%= entry.food %></div>
+      <%= link_to entry do %>
+        <div class="food"><%= entry.food %></div>
+      <% end %>
       <div class="situation"><%= entry.situation %></div>
     </div>
   

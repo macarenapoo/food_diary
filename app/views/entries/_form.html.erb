@@ -1,7 +1,7 @@
 <%= form_for(@entry) do |f| %>
   <% if @entry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+    <div id="error_explanation" class="message error">
+        <h2>Oops! We found <%= pluralize(@entry.errors.count, "error") %></h2>
 
       <ul>
       <% @entry.errors.full_messages.each do |msg| %>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.label :date %>
+    <%= f.date_select :date, { :class=>"input-lg form-control"} %>
   </div>
   <div class="field">
-    <%= f.label :time %><br>
+    <%= f.label :time %>
     <%= f.time_select :time %>
   </div>
   <div class="field">

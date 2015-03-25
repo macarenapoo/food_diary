@@ -1,24 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="message success"><h2><%= notice %></h2></div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @entry.date %>
-</p>
+<div class="date"><%= @entry.date.strftime("%B %C, %G") %></div>
 
-<p>
-  <strong>Time:</strong>
-  <%= @entry.time %>
-</p>
+<div class="entry">
+ 
+  <div class="time"><%= @entry.time.strftime("%l:%M %p") %></div>
+  <div class="food"><%= @entry.food %></div>
+  <div class="situation"><%= @entry.situation %></div>
+</div>
 
-<p>
-  <strong>Food:</strong>
-  <%= @entry.food %>
-</p>
+<%= link_to 'Back', entries_path, {:class=>'button-gray'} %>
 
-<p>
-  <strong>Situation:</strong>
-  <%= @entry.situation %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
