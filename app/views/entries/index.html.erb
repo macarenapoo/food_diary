@@ -1,33 +1,18 @@
-<h1>Listing entries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Food</th>
-      <th>Situation</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr id="<%= dom_id(entry) %>">
-        <td><%= entry.date %></td>
-        <td><%= entry.time %></td>
-        <td><%= entry.food %></td>
-        <td><%= entry.situation %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Entry', new_entry_path %>
+<% date = "" %>
+<% @entries.each do |entry| %>
+  <% if date != entry.date %>
+    <% date = entry.date %>
+    <div class="date"><%= date.strftime("%B %C, %G") %></div>
+  <% end %>
+    <div class="entry" id="<%= dom_id(entry) %>">
+      <div class="edit">
+         <%= link_to 'Edit', edit_entry_path(entry) %>
+         <%= link_to 'Delete', entry, method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </div>
+     
+      <div class="time"><%= entry.time.strftime("%l:%M %p") %></div>
+      <div class="food"><%= entry.food %></div>
+      <div class="situation"><%= entry.situation %></div>
+    </div>
+  
+<% end %>
