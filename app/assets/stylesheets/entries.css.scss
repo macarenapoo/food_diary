@@ -31,20 +31,6 @@ body {
 			color: $gray-light;
 		}
 	}
-	.btn-success{
-		box-shadow: none;
-		border: none;
-		background: $green;
-		text-shadow: none;
-		float: right;
-		font-weight: bold;
-		letter-spacing: 1px;
-		font-size: 1em;
-		text-transform: uppercase;
-		&:hover{
-			background: darken($green, 10);
-		}
-	}
 }
 
 .entry{
@@ -148,7 +134,7 @@ h1{
 }
 
 %button{
-	padding: 10px 40px;
+	padding: 10px 20px;
   margin: 20px 0;
   border-radius: 5px;
   font-weight: bold;
@@ -216,5 +202,24 @@ a{
 	float: none;
 	.navbar-right{
 		margin-right: 0px;
+	}
+}
+
+.btn-large{
+	@extend %button;
+}
+
+.btn-success{
+	box-shadow: none;
+	border: none;
+	background: $green;
+	text-shadow: none;
+	float: right;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 1em;
+	text-transform: uppercase;
+	&:hover{
+		background: darken($green, 10);
 	}
 }

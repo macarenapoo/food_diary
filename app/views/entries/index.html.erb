@@ -1,8 +1,8 @@
 <% date = "" %>
-<% @entries.each do |entry| %>
+<% @entries.order(:date).order(:time).reverse_order.each do |entry| %>
   <% if date != entry.date %>
     <% date = entry.date %>
-    <div class="date"><%= date.strftime("%B %C, %G") %></div>
+    <div class="date"><%= date.strftime("%B %-d, %G") %></div>
   <% end %>
     <div class="entry" id="<%= dom_id(entry) %>">
       <div class="edit">

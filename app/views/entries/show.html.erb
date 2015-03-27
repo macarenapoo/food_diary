@@ -3,11 +3,13 @@
 <div class="date"><%= @entry.date.strftime("%B %C, %G") %></div>
 
 <div class="entry">
- 
+	<div class="edit">
+ 		<%= link_to 'Edit', edit_entry_path %>
+ 	</div>
   <div class="time"><%= @entry.time.strftime("%l:%M %p") %></div>
   <div class="food"><%= @entry.food %></div>
   <div class="situation"><%= @entry.situation %></div>
 </div>
 
-<%= link_to 'Back', entries_path, {:class=>'button-gray'} %>
+<%= link_to 'Done', entries_path, {:class=>'btn btn-success btn-large pull-right'} %>
 
