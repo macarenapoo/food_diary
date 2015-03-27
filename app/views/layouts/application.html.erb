@@ -3,20 +3,18 @@
 <head>
   <title>FoodDiary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Dosis:400,700" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Dosis:400,700" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
-			
-		<div class="navbar-header">
-			<div class="container">
-			<%= link_to "New", new_entry_path, {:class=>"btn btn-success navbar-right navbar-btn"} %>
-			<%= link_to "Food Diary", entries_path, {:class=>"navbar-brand"} %>
-			</div>	
-		</div>
+
+    <div class="container">
+    <%= link_to "New", new_entry_path, {:class=>"btn btn-success navbar-right navbar-btn"} %>
+    <%= link_to "Food Diary", entries_path, {:class=>"navbar-brand"} %>
+    </div>
 	</nav>
 	<div class="container">
 		<%= yield %>

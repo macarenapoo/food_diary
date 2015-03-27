@@ -13,10 +13,10 @@
 
   <div class="field">
     <%= f.label :date %>
-    <%= f.date_select :date, { :class=>"input-lg form-control"} %>
+    <%= f.date_select :date, {:order=>[:day, :month, :year], :class=>"input-lg form-control"} %>
   </div>
   <div class="field">
-    <%= f.label :time %>
+    <%= f.label :time, 'Time:' %>
     <%= f.time_select :time %>
   </div>
   <div class="field">

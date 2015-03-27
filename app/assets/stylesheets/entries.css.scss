@@ -27,6 +27,9 @@ body {
 	.navbar-brand{
 		text-shadow: none;
 		color: $gray-light;
+		&:hover{
+			color: $gray-light;
+		}
 	}
 	.btn-success{
 		box-shadow: none;
